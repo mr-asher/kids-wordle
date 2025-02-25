@@ -25,7 +25,7 @@ export default function GameGrid({ gameState }: GameGridProps) {
   }
 
   return (
-    <div className="grid grid-rows-6 gap-2">
+    <div className="grid grid-rows-4 gap-2">
       {rows.map(({ rowGuess, rowFeedback }, rowIndex) => (
         <div key={rowIndex} className="flex gap-2">
           {rowGuess.map((letter, index) => (

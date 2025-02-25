@@ -111,11 +111,11 @@ export function handleKeyPress(
 ): WordlingGame {
   if (gameState.gameOver) return gameState;
 
-  if (key === "Enter") {
+  if (key.toLowerCase() === "enter" || key.toLowerCase() === "{enter}") {
     return submitGuess(gameState);
   }
 
-  if (key === "Backspace") {
+  if (key.toLowerCase() === "backspace" || key.toLowerCase() === "{bksp}") {
     return removeLastLetter(gameState);
   }
 
