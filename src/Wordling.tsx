@@ -39,7 +39,7 @@ export default function Wordling() {
   };
 
   return (
-    <div className="flex flex-col items-center relative">
+    <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-500 via-blue-500 via-green-400 via-yellow-400 to-red-500 flex flex-col items-center relative">
       <WordListSelector
         selected={selectedWordList}
         onSelect={handleWordListChange}

@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+/* Ensure the html and body take full height for gradient background */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
