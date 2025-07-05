@@ -6,18 +6,20 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 import { createInitialGame, WordlingGame } from "./game.logic";
-import { GOLDEN_WORDS } from "./wordlist";
+import { getWordList, WordListKey } from "./wordlist";
 
 type GameEndModalProps = {
   game: WordlingGame;
   setGame: React.Dispatch<React.SetStateAction<WordlingGame>>;
   gameOver: boolean;
+  selectedWordList: WordListKey | "All Lists";
 };
 
 export default function GameEndModal({
   game,
   setGame,
   gameOver,
+  selectedWordList,
 }: GameEndModalProps) {
   const [isOpen, setIsOpen] = useState(gameOver);
 
@@ -28,7 +30,7 @@ export default function GameEndModal({
   const reset = () => {
     setIsOpen(false);
     setTimeout(() => {
-      setGame(createInitialGame(GOLDEN_WORDS));
+      setGame(createInitialGame(getWordList(selectedWordList)));
     }, 500);
   };
 
